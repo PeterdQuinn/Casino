@@ -163,3 +163,41 @@ button:disabled {
 #login-form input {
   margin-bottom: 15px;
 }
+
+/* Game 2 Styles */
+.game2-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 0 auto;
+  width: 300px;
+}
+
+.game2-box h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #d64f4f;
+  margin: 10px 0;
+}
+
+.game2-box p {
+  font-size: 1.1rem;
+  margin: 5px 0;
+}
+
+#chamber-info {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+#bullet-status {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #d64f4f;
+  margin: 10px 0;
+}
