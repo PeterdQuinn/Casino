@@ -6,9 +6,9 @@ document.addEventListener("DOMContentLoaded", function() {
       const randomNumber = Math.random();
 
       if (randomNumber < 0.1666) {
-          result.textContent = "Bang! You lost!";
+          result.textContent = "Bang! Your time to go!";
       } else {
-          result.textContent = "Click! You're safe!";
+          result.textContent = "Click! Not your time amigo!";
       }
   });
 });
