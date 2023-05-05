@@ -58,26 +58,31 @@ main {
   gap: 20px;
 }
 
+/* Updated game list styles */
 .game-list a {
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 20px;
-  background-color: #007bff;
+  background-color: #e50914;
   color: #fff;
   text-decoration: none;
   border-radius: 5px;
   font-size: 1.25rem;
-  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .game-list a:hover {
-  background-color: #0056b3;
+  background-color: #a40611;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
 .game-list i {
   margin-right: 10px;
+  font-size: 1.5rem;
 }
+
 
 /* Footer styles */
 footer {
