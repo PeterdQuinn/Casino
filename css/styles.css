@@ -193,3 +193,45 @@ body {
   height: auto; /* Maintain the aspect ratio */
 }
 
+/* Media queries for responsiveness */
+@media (max-width: 767px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  header h1 {
+    margin-bottom: 20px;
+  }
+
+  .game-list {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+
+  .game-link {
+    font-size: 14px;
+    width: 150px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .game-list {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  .game-link {
+    font-size: 16px;
+    width: 200px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .game-list {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+
+  .game-link {
+    font-size: 18px;
+    width: 250px;
+  }
+}
