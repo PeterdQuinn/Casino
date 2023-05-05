@@ -15,8 +15,103 @@
             <p>Try your luck in Russian Roulette! Press the trigger and hope for the best!</p>
             <button id="trigger-btn">Pull the trigger</button>
             <p id="result"></p>
+            <div class="place-bet">
+                <p>Place Bet:</p>
+                <button class="bet-btn" data-value="1">$1</button>
+                <button class="bet-btn" data-value="5">$5</button>
+                <button class="bet-btn" data-value="10">$10</button>
+            </div>
         </div>
     </main>
     <script src="../js/game2.js"></script>
 </body>
 </html>
+
+
+<style>
+
+    /* General styles */
+html {
+  height: 100%;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(#141e30, #243b55);
+  color: #fff;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+header {
+  background-color: #ff9800;
+  padding: 20px;
+}
+h1 {
+  margin: 0;
+  font-size: 36px;
+}
+main {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#game-container {
+  padding: 40px;
+  background: rgba(0, 0, 0, .5);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+  border-radius: 10px;
+  text-align: center;
+  position: relative;
+}
+.game2-box p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+#trigger-btn {
+  background-color: #4CAF50;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 10px 20px;
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
+#result {
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+.place-bet {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.place-bet p {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.bet-btn {
+  background-color: #4CAF50;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 10px 20px;
+  border-radius: 3px;
+  margin-right: 10px;
+}
+.bet-btn:last-child {
+  margin-right: 0;
+}
+.bet-btn.active {
+  background-color: #3e8e41;
+}
+
+
+
+</style>

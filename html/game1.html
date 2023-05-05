@@ -1,39 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Higher or Lower - Casino App</title>
-  <link rel="stylesheet" href="../css/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Higher or Lower - Casino App</title>
+    <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
-  <header>
-    <div class="container">
-      <h1>Higher or Lower</h1>
-    </div>
-  </header>
-  <main>
-    <div id="game-container" class="container">
-      <p>Guess if the next number will be higher or lower than the current number!</p>
-      <div class="number-container">
-        <p class="number-label">Current number:</p>
-        <p class="number-value" id="current-number">0</p>
-      </div>
-      <div class="button-container">
-        <button class="game-button" id="higher-btn">Higher</button>
-        <button class="game-button" id="lower-btn">Lower</button>
-      </div>
-      <p id="result"></p>
-    </div>
-  </main>
-  <footer>
-    <div class="container">
-      <p>&copy; 2023 Higher or Lower - Casino App. All rights reserved.</p>
-    </div>
-  </footer>
-  <script src="../js/game1.js"></script>
+    <header>
+        <h1>Higher or Lower</h1>
+    </header>
+    <main>
+        <div id="game-container">
+            <p>Guess if the next number will be higher or lower than the current number!</p>
+            <p>Current number: <span id="current-number">0</span></p>
+            <button id="higher-btn">Higher</button>
+            <button id="lower-btn">Lower</button>
+            <p id="result"></p>
+            <div id="bet-container">
+                <p>Bet amount:</p>
+                <button id="bet-1">$1</button>
+                <button id="bet-5">$5</button>
+                <button id="bet-10">$10</button>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2023 Higher or Lower - Casino App</p>
+    </footer>
+    <script src="../js/game1.js"></script>
 </body>
 </html>
+
 
 
 <style>
@@ -96,6 +94,39 @@ main {
   margin-top: 20px;
 }
 
+
+#bet-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.bet-button {
+  background-color: #4CAF50;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 10px 20px;
+  border-radius: 3px;
+  margin: 0 10px 10px 0;
+}
+
+.bet-button:hover {
+  background-color: #3e8e41;
+}
+
+
+
+
+
+
+
+
+
+
+
 /* Desktop Styles */
 @media screen and (min-width: 768px) {
   body {
@@ -111,7 +142,71 @@ main {
     margin: 0 auto;
   }
 }
+/* Tablet styles */
+@media (min-width: 768px) {
+  h1 {
+    font-size: 48px;
+  }
 
+  #game-container {
+    width: 70%;
+  }
+
+  #current-number {
+    font-size: 48px;
+  }
+
+  button {
+    font-size: 20px;
+    padding: 15px 30px;
+  }
+
+  #result {
+    font-size: 24px;
+  }
+}
+
+/* Desktop styles */
+@media (min-width: 1024px) {
+  h1 {
+    font-size: 64px;
+  }
+
+  #game-container {
+    width: 50%;
+  }
+
+  #current-number {
+    font-size: 64px;
+  }
+
+  button {
+    font-size: 24px;
+    padding: 20px 40px;
+  }
+
+  #result {
+    font-size: 28px;
+  }
+}
+.bet-button {
+  font-size: 20px;
+  padding: 20px 30px;
+}
+
+@media screen and (max-width: 768px) {
+  .bet-button {
+    font-size: 16px;
+    padding: 16px 24px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .bet-button {
+    font-size: 14px;
+    padding: 14px 20px;
+  }
+}
 
 
 
