@@ -17,6 +17,30 @@ header {
   align-items: center;
 }
 
+/* Login button styles */
+nav a {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #e50914;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1.25rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+nav a:hover {
+  background-color: #a40611;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+nav i {
+  margin-right: 10px;
+  font-size: 1.5rem;
+}
+
 header h1 {
   color: #fff;
   font-size: 2rem;
@@ -91,4 +115,41 @@ footer {
   text-align: center;
   color: #fff;
   margin-top: 20px;
+}
+
+
+
+/* Add the provided CSS here */
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 5px;
+}
+
+.circ-button {
+  display: block;
+  width: 6em;
+  height: 6em;
+  font-size: 2em;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  background: green;
+  border: 10px dashed #fff;
+  border-radius: 6em;
+  padding-top: calc(3em - 1em);
+  transition: all linear 0.15s;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  margin: 2em auto;
+}
+
+.circ-button:hover {
+  background: darken(invert(green), 25%);
+  border-color: invert(#fff);
+  color: invert(#fff);
 }
