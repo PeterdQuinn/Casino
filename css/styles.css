@@ -63,6 +63,12 @@ header nav a {
 header nav a:hover {
   background-color: #0056b3;
 }
+.game-button {
+  background-image: linear-gradient(to bottom, gold, black);
+  /* The rest of your .game-button styles */
+}
+
+
 
 /* Main content styles */
 main {
@@ -74,7 +80,9 @@ main {
 
 .hero {
   margin-bottom: 20px;
+  font-size: 2.5rem;
 }
+
 
 .game-list {
   display: grid;
@@ -122,6 +130,7 @@ footer {
   text-align: center;
   color: #fff;
   margin-top: 20px;
+  font-size: 2.5rem;
 }
 
 
