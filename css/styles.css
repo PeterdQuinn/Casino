@@ -1,410 +1,89 @@
-/* Casino-like background */
+/* General styles */
 body {
-  background-image: radial-gradient(circle at center, #702963, #1c1c1c);
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-image: url('https://source.unsplash.com/1600x900/?las-vegas');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
-/* Navbar styles */
-nav {
-  background-color: rgba(255, 255, 255, 0.1);
-  padding: 10px;
-  border-radius: 5px;
-}
-
-/* Footer styles */
-footer {
-  background-color: #2b2b2b;
-  color: #fff;
-  padding: 20px;
-  text-align: center;
-  font-size: 0.9rem;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-}
-
+/* Header styles */
 header {
-  background-color: #2b2b2b;
+  background-color: rgba(0, 0, 0, 0.7);
   padding: 20px;
-  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-h1 {
+header h1 {
   color: #fff;
   font-size: 2rem;
   margin: 0;
 }
 
-main {
-  padding: 20px;
-}
-
-nav {
+header nav {
   display: flex;
-  flex-direction: column;
   gap: 10px;
-  margin-bottom: 20px;
 }
 
-nav a {
-  background-color: #007bff;
+header nav a {
   color: #fff;
   text-decoration: none;
   padding: 10px 20px;
   border-radius: 5px;
+  background-color: #007bff;
+}
+
+header nav a:hover {
+  background-color: #0056b3;
+}
+
+/* Main content styles */
+main {
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 5px;
+  margin: 20px;
+}
+
+.hero {
+  margin-bottom: 20px;
+}
+
+.game-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.game-list a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1.25rem;
+  transition: background-color 0.3s ease;
+}
+
+.game-list a:hover {
+  background-color: #0056b3;
+}
+
+.game-list i {
+  margin-right: 10px;
+}
+
+/* Footer styles */
+footer {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 20px;
   text-align: center;
-}
-
-nav a:hover {
-  background-color: #0056b3;
-}
-
-/* Game-specific styles */
-.game-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #fff;
-  border-radius: 5px;
-  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  margin: 0 auto;
-  width: 100%;
-  max-width: 300px;
-  gap: 10px;
-}
-
-button {
-  background-color: #007bff;
   color: #fff;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 1rem;
-  width: 100%;
-}
-
-button:hover {
-  background-color: #0056b3;
-}
-
-button:disabled {
-  background-color: #cccccc;
-  cursor: not-allowed;
-}
-
-/* Responsive styles */
-@media (min-width: 768px) {
-  nav {
-    flex-direction: row;
-    justify-content: space-around;
-  }
-
-  h1 {
-    font-size: 2.5rem;
-  }
-}
-
-@media (min-width: 1024px) {
-  h1 {
-    font-size: 3rem;
-  }
-}
-@media (min-width: 1200px) {
-  h1 {
-    font-size: 3.5rem;
-  }
-
-  nav a {
-    font-size: 1.1rem;
-  }
-
-  .game-container {
-    max-width: 400px;
-  }
-
-  button {
-    font-size: 1.2rem;
-  }
-}
-
-
-/* Game-specific styles */
-#game-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-}
-
-button {
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 1rem;
-}
-
-button:hover {
-  background-color: #0056b3;
-}
-
-button:disabled {
-  background-color: #cccccc;
-  cursor: not-allowed;
-}
-
-/* Game 1 Styles */
-.game1-box {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #fff;
-  border-radius: 5px;
-  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  margin: 0 auto;
-  width: 300px;
-}
-
-#current-number {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #0099cc;
-  margin: 10px 0;
-}
-
-#result {
-  font-size: 1.2rem;
-  margin-top: 10px;
-}
-
-/* Login styles */
-.login-box {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: #fff;
-  border-radius: 5px;
-  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  margin: 0 auto;
-  width: 300px;
-}
-
-#login-form {
-  display: flex;
-  flex-direction: column;
-}
-
-#login-form label {
-  margin-bottom: 5px;
-}
-
-#login-form input {
-  margin-bottom: 15px;
-}
-
-/* Game 2 Styles */
-.game2-box {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #fff;
-  border-radius: 5px;
-  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  margin: 0 auto;
-  width: 300px;
-}
-
-.game2-box h2 {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #d64f4f;
-  margin: 10px 0;
-}
-
-.game2-box p {
-  font-size: 1.1rem;
-  margin: 5px 0;
-}
-
-#chamber-info {
-  font-size: 1.2rem;
-  font-weight: bold;
-  margin: 10px 0;
-}
-
-#bullet-status {
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #d64f4f;
-  margin: 10px 0;
-}
-
-
-/* Game 3 Styles (Rock, Paper, Scissors) */
-.game3-box {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #fff;
-  border-radius: 5px;
-  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  margin: 0 auto;
-  width: 300px;
-}
-
-/* Add more styles for the Rock, Paper, Scissors game as needed */
-
-
-
-.game4-box {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #fff;
-  border-radius: 5px;
-  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  margin: 0 auto;
-  width: 300px;
-}
-
-.game5-box {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #fff;
-  border-radius: 5px;
-  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  margin: 0 auto;
-  width: 320px;
-}
-
-
-/* Dice Rolling Styles */
-.game6-box {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-}
-
-#dice-container {
-  display: flex;
-  gap: 10px;
-}
-
-.dice {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #fff;
-  border-radius: 5px;
-  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
-  font-size: 2rem;
-  font-weight: bold;
-  width: 60px;
-  height: 60px;
-}
-
-/* Card Finding Styles */
-.game7-box {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-}
-
-#cards-container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
-  margin-bottom: 10px;
-}
-
-.card {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #0099cc;
-  border-radius: 5px;
-  color: #fff;
-  font-size: 1.5rem;
-  font-weight: bold;
-  height: 80px;
-  width: 80px;
-}
-
-.card.found {
-  background-color: #2b2b2b;
-}
-
-/* Number Slot Styles */
-.game8-box {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-}
-
-#slots-container {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 10px;
-}
-
-.slot {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #0099cc;
-  border-radius: 5px;
-  color: #fff;
-  font-size: 2rem;
-  font-weight: bold;
-  height: 80px;
-  width: 80px;
-}
-
-/* Pool Number Styles */
-.game9-box {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-}
-
-#number-pool {
-  display: grid;
-  grid-template-columns: repeat(10, 1fr);
-  gap: 5px;
-  width: 100%;
-  max-width: 300px;
-  margin-bottom: 10px;
-}
-
-.number {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #0099cc;
-  border-radius: 50%;
-  color: #fff;
-  font-size: 1rem;
-  font-weight: bold;
-  height: 30px;
-  width: 30px;
-  cursor: pointer;
-}
-
-.number.selected {
-  background-color: #007bff;
+  margin-top: 20px;
 }

@@ -4,27 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Casino App</title>
-    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="./css/styles.css">
     <link rel="manifest" href="/manifest.json">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-xxx" crossorigin="anonymous" />
+
 </head>
 <body>
     <header>
         <h1>Welcome to Casino App</h1>
+        <nav>
+            <a href="html/login.html">Login</a>
+        </nav>
     </header>
-    <nav>
-        <a href="html/login.html">Login</a>
-        <a href="html/game1.html">Higher or Lower</a>
-        <a href="html/game2.html">Russian Roulette</a>
-        <a href="html/heads_tails.html">Heads or Tails</a>
-        <a href="html/spin_the_wheel.html">Spin the wheel</a>
-        <a href="html/dice_rolling.html">dice rolling</a>
-        <a href="html/card_finding.html">card finding</a>
-        <a href="html/number_slot.html">number slot</a>
-        <a href="html/pool_number.html">pool number</a>
-        <a href="html/blackjack.html">blackjack</a>
-    </nav>
     <main>
-        <p id="welcome-message"></p>
+        <section class="hero">
+            <p>Experience the thrill of our casino games right from your device!</p>
+        </section>
+        <section class="game-list">
+          <a href="html/game1.html"><i class="fas fa-arrow-up"></i> Higher or Lower</a>
+          <a href="html/game2.html"><i class="fas fa-skull-crossbones"></i> Russian Roulette</a>
+          <a href="html/heads_tails.html"><i class="fas fa-coins"></i> Heads or Tails</a>
+          <a href="html/spin_the_wheel.html"><i class="fas fa-circle-notch"></i> Spin the wheel</a>
+          <a href="html/dice_rolling.html"><i class="fas fa-dice"></i> Dice rolling</a>
+          <a href="html/card_finding.html"><i class="fas fa-search"></i> Card finding</a>
+          <a href="html/number_slot.html"><i class="fas fa-hashtag"></i> Number slot</a>
+          <a href="html/pool_number.html"><i class="fas fa-th"></i> Pool number</a>
+          <a href="html/blackjack.html"><i class="fas fa-crown"></i> Blackjack</a>
+      </section>
+      
     </main>
     <footer>
         <p>&copy; Casino App, All Rights Reserved.</p>
