@@ -18,8 +18,101 @@
             <p id="player-choice">You chose: -</p>
             <p id="computer-choice">Coin landed on: -</p>
             <p id="result">Result: -</p>
+            <div class="betting-boxes">
+              <p>Place your bet:</p>
+              <button id="bet-1">$1</button>
+              <button id="bet-5">$5</button>
+              <button id="bet-10">$10</button>
+            </div>
         </div>
     </main>
     <script src="../js/heads_tails.js"></script>
 </body>
 </html>
+
+<style>
+    body {
+  background-color: #f2f2f2;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+h1 {
+  margin-top: 0;
+  height: 2.5px;
+}
+
+form {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  width: 400px;
+}
+
+input[type="text"], input[type="password"] {
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 16px;
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+input[type="submit"] {
+  background-color: #4CAF50;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 10px 20px;
+  border-radius: 3px;
+}
+
+input[type="submit"]:hover {
+  background-color: #3e8e41;
+}
+
+.game4-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+#heads-btn,
+#tails-btn {
+  background-color: #4CAF50;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 10px 20px;
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
+
+#heads-btn:hover,
+#tails-btn:hover {
+  background-color: #3e8e41;
+}
+
+#player-choice,
+#computer-choice,
+#result {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+</style>
