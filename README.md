@@ -1,7 +1,7 @@
 # Casino
 
 
-#Needs
+## Needs ##
 and ux and ui design.
 Js functionality
 BlackJack
