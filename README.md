@@ -1,4 +1,7 @@
-# Casino
+#Gaming#
+PWA gaming applicaton-
+Multile games to earn tokens
+
 
 
 ## Needs ##
@@ -12,3 +15,9 @@ Heads_ tails
 number_slot
 rock paper scissors 
 spin the wheel
+
+----
+feature adds later-
+Crypto wallet hook ups
+login in cred 
+tokens to earn to keep playing
