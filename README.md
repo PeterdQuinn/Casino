@@ -5,7 +5,7 @@ Multile games to earn tokens
 
 
 ## Needs ##
-and ux and ui design.
+and ux and ui design for each game, and. better background for the main dispaly. 
 Js functionality
 BlackJack
 Card_finding
