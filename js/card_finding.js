@@ -1,49 +1,85 @@
-const cardsContainer = document.getElementById('cards-container');
-const resetBtn = document.getElementById('reset-btn');
-const totalCards = 12;
-let foundCards = 0;
+const selectors = {
+  boardContainer: document.querySelector('.board-container'),
+  board: document.querySelector('.board'),
+  moves: document.querySelector('.moves'),
+  timer: document.querySelector('.timer'),
+  start: document.querySelector('button'),
+  win: document.querySelector('.win')
+}
 
-createCards();
+const state = {
+  gameStarted: false,
+  flippedCards: 0,
+  totalFlips: 0,
+  totalTime: 0,
+  loop: null
+}
 
-resetBtn.addEventListener('click', () => {
-  cardsContainer.innerHTML = '';
-  foundCards = 0;
-  createCards();
-});
+const generateGame = () => {
+  const dimensions = selectors.board.getAttribute('data-dimension')
 
-function createCards() {
-  const cards = generateCardsArray(totalCards);
+  if (dimensions % 2 !== 0) {
+      throw new Error("The dimension of the board must be an even number.")
+  }
 
-  for (const card of cards) {
-    const cardElement = document.createElement('div');
-    cardElement.className = 'card';
-    cardElement.dataset.value = card;
+  const emojis = ['🥔', '🍒', '🥑', '🌽', '🥕', '🍇', '🍉', '🍌', '🥭', '🍍']
+  const picks = pickRandom(emojis, (dimensions * dimensions) / 2) 
+  const items = shuffle([...picks, ...picks])
+  const cards = `
+      <div class="board" style="grid-template-columns: repeat(${dimensions}, auto)">
+          ${items.map(item => `
+              <div class="card">
+                  <div class="card-front"></div>
+                  <div class="card-back">${item}</div>
+              </div>
+          `).join('')}
+     </div>
+  `
+  
+  const parser = new DOMParser().parseFromString(cards, 'text/html')
 
-    cardElement.addEventListener('click', () => {
-      if (!cardElement.classList.contains('found')) {
-        cardElement.textContent = card;
-        cardElement.classList.add('found');
-        foundCards++;
+  selectors.board.replaceWith(parser.querySelector('.board'))
+}
 
-        if (foundCards === totalCards) {
-          alert('You found all the cards!');
-        }
+const pickRandom = (array, items) => {
+  const clonedArray = [...array]
+  const randomPicks = []
+
+  for (let index = 0; index < items; index++) {
+      const randomIndex = Math.floor(Math.random() * clonedArray.length)
+      
+      randomPicks.push(clonedArray[randomIndex])
+      clonedArray.splice(randomIndex, 1)
+  }
+
+  return randomPicks
+}
+const shuffle = array => {
+  const clonedArray = [...array]
+
+  for (let index = clonedArray.length - 1; index > 0; index--) {
+      const randomIndex = Math.floor(Math.random() * (index + 1))
+      const original = clonedArray[index]
+
+      clonedArray[index] = clonedArray[randomIndex]
+      clonedArray[randomIndex] = original
+  }
+
+  return clonedArray
+}
+
+const attachEventListeners = () => {
+  document.addEventListener('click', event => {
+      const eventTarget = event.target
+      const eventParent = eventTarget.parentElement
+
+      if (eventTarget.className.includes('card') && !eventParent.className.includes('flipped')) {
+          flipCard(eventParent)
+      } else if (eventTarget.nodeName === 'BUTTON' && !eventTarget.className.includes('disabled')) {
+          startGame()
       }
-    });
-
-    cardsContainer.appendChild(cardElement);
-  }
+  })
 }
 
-function generateCardsArray(count) {
-  const cards = Array.from({ length: count / 2 }, (_, i) => i + 1).concat(
-    Array.from({ length: count / 2 }, (_, i) => i + 1)
-  );
-
-  for (let i = cards.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [cards[i], cards[j]] = [cards[j], cards[i]];
-  }
-
-  return cards;
-}
+generateGame()
+attachEventListeners()
