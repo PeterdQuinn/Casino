@@ -9,12 +9,70 @@
 	<script src="../js/dice_rolling.js" defer></script>
 </head>
 <body>
+	<div class="betting-area">
+		<label for="bet-amount">Bet Amount:</label>
+		<input type="number" id="bet-amount" min="1" max="100" step="1">
+		<button class="token-btn" data-value="1">1 Token</button>
+		<button class="token-btn" data-value="5">5 Tokens</button>
+		<button class="token-btn" data-value="10">10 Tokens</button>
+		<p>Total Won: <span id="total-won">0</span></p>
+	</div>
+	<div class="dice-container"></div>
 	<div class="dice-container"></div>
 	<button type="button" class="btn-roll-dice">Roll Dice</button>
 </body>
   <style>
-    .dice-container {
+.center {
 	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+
+.box {
+	padding: 20px;
+	border: 2px solid #ccc;
+	border-radius: 5px;
+}
+
+.betting-area {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 20px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+	background-color: #fff;
+	padding: 20px;
+	border-radius: 5px;
+}
+
+.betting-area label {
+	margin-right: 10px;
+}
+
+.betting-area input {
+	width: 50px;
+}
+
+.token-btn {
+	margin: 5px;
+	padding: 5px 10px;
+	border: none;
+	background-color: #007bff;
+	color: #fff;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.token-btn:hover {
+	background-color: #0056b3;
+}
+
+.dice-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 20px;
 }
 
 .dice {
@@ -43,8 +101,21 @@
 }
 
 .btn-roll-dice {
-	margin-top: 10px;
+	display: block;
+	margin: 20px auto;
+	padding: 10px 20px;
+	border: none;
+	background-color: #007bff;
+	color: #fff;
+	border-radius: 5px;
+	cursor: pointer;
 }
+
+.btn-roll-dice:hover {
+	background-color: #0056b3;
+}
+
+
   </style>
 
 
