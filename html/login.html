@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="index.css">
-  <title>HASH TECHIE OFFICIAL</title>
+  <title>Login</title>
 </head>
 <body class="light-mode">
   <section class="section">
@@ -54,14 +54,13 @@
 </html>
 
       <style>
-        /* Light mode styles */
+       /* Light mode styles */
 body {
-  background-color: #f0f0f0;
+  background-color: transparent;
   color: #333;
   background-image: url('../Assets/buttons.png');
   background-repeat: no-repeat;
   background-size: cover;
-
 }
 
 .section {
@@ -78,6 +77,11 @@ body {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   position: relative;
   overflow: hidden;
+  text-align: center;
+}
+
+.form-box h2 {
+  margin-top: 20px;
 }
 
 .mode-toggle {
@@ -101,8 +105,8 @@ body {
 
 /* Dark mode styles */
 body.dark-mode {
-  background-color: #333;
-  color: #f0f0f0;
+  background-color: transparent;
+  color: hsl(49, 94%, 44%);
 }
 
 .form-box.dark-mode {
@@ -110,38 +114,29 @@ body.dark-mode {
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
 }
 
-.form-box.dark-mode h2 {
+.form-box.dark-mode h2,
+.inputbox.dark-mode ion-icon,
+.inputbox.dark-mode label,
+.forget.dark-mode label,
+.register.dark-mode a {
   color: #f0f0f0;
 }
 
-.inputbox.dark-mode ion-icon {
-  color: #f0f0f0;
-}
-
-.inputbox.dark-mode label {
-  color: #f0f0f0;
-}
-
-.forget.dark-mode label {
-  color: #f0f0f0;
-}
-
-button.dark-mode {
+.button-box.dark-mode button {
   background-color: #0077d7;
   color: #f0f0f0;
 }
 
-button.dark-mode:hover {
+.button-box.dark-mode button:hover {
   background-color: #0095ff;
-}
-
-.register.dark-mode a {
-  color: #fff;
 }
 
 .mode-toggle.dark-mode ion-icon {
   color: #f0f0f0;
 }
+
+
+
 
 
       </style>
