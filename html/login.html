@@ -1,74 +1,162 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>Login below</title>
-	<style>
-		body {
-	background-image: url('../Assets/2.jpeg');
-	background-repeat: repeat;
-	font-family: Arial, sans-serif;
-	margin: 0;
-	padding: 0;
-}
-
-.container {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	height: 100vh;
-}
-
-h1 {
-	margin-top: 0;
-    color: white;
-}
-
-form {
-	background-color: #fff;
-	border-radius: 5px;
-	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-	padding: 20px;
-	width: 400px;
-}
-
-input[type="text"], input[type="password"] {
-	border: 1px solid #ccc;
-	border-radius: 3px;
-	font-size: 16px;
-	padding: 10px;
-	width: 100%;
-	margin-bottom: 20px;
-}
-
-input[type="submit"] {
-	background-color: #4CAF50;
-	border: none;
-	color: #fff;
-	cursor: pointer;
-	font-size: 16px;
-	padding: 10px 20px;
-	border-radius: 3px;
-}
-
-input[type="submit"]:hover {
-	background-color: #3e8e41;
-}
-
-	</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>HASH TECHIE OFFICIAL</title>
 </head>
-<body>
-	<div class="container">
-		<h1>Login</h1>
-		<form>
-			<label for="username">Username:</label>
-			<input type="text" id="username" name="username" required>
+<body class="light-mode">
+  <section class="section">
+    <div class="form-box">
+      <button class="mode-toggle" aria-label="Toggle light/dark mode">
+        <ion-icon name="moon-outline"></ion-icon>
+        <ion-icon name="sunny-outline"></ion-icon>
+      </button>
+      <div class="form-value">
+        <form action="">
+          <h2>Login</h2>
+          <div class="inputbox">
+            <ion-icon name="mail-outline"></ion-icon>
+            <input type="email" required>
+            <label for="">Email</label>
+          </div>
+          <div class="inputbox">
+            <ion-icon name="lock-closed-outline"></ion-icon>
+            <input type="password" required>
+            <label for="">Password</label>
+          </div>
+          <div class="forget">
+            <label for=""><input type="checkbox">Remember Me  <a href="#">Forget Password</a></label>
+          </div>
+          <button>Log in</button>
+          <div class="register">
+            <p>Don't have an account <a href="#">Register</a></p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script>
+    const button = document.querySelector('.mode-toggle');
+    const body = document.querySelector('body');
+    button.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+      button.classList.toggle('active');
+      const currentLabel = button.getAttribute('aria-label');
+      const newLabel = currentLabel === 'Toggle light/dark mode' ? 'Toggle dark/light mode' : 'Toggle light/dark mode';
+      button.setAttribute('aria-label', newLabel);
+    });
+  </script>
+</body>
+</html>
 
-			<label for="password">Password:</label>
-			<input type="password" id="password" name="password" required>
+      <style>
+        /* Light mode styles */
+body {
+  background-color: #f0f0f0;
+  color: #333;
+  background-image: url('../Assets/buttons.png');
+  background-repeat: no-repeat;
+  background-size: cover;
 
-			<input type="submit" value="Login">
-		</form>
-	</div>
+}
+
+.section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.form-box {
+  width: 350px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.mode-toggle {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mode-toggle ion-icon {
+  font-size: 28px;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+  background-color: #333;
+  color: #f0f0f0;
+}
+
+.form-box.dark-mode {
+  background-color: #222;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.form-box.dark-mode h2 {
+  color: #f0f0f0;
+}
+
+.inputbox.dark-mode ion-icon {
+  color: #f0f0f0;
+}
+
+.inputbox.dark-mode label {
+  color: #f0f0f0;
+}
+
+.forget.dark-mode label {
+  color: #f0f0f0;
+}
+
+button.dark-mode {
+  background-color: #0077d7;
+  color: #f0f0f0;
+}
+
+button.dark-mode:hover {
+  background-color: #0095ff;
+}
+
+.register.dark-mode a {
+  color: #fff;
+}
+
+.mode-toggle.dark-mode ion-icon {
+  color: #f0f0f0;
+}
+
+
+      </style>
+    </div>
+  </section>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script>
+    const body = document.querySelector('body');
+    const button = document.createElement('button');
+    button.innerText = 'Toggle Dark Mode';
+    button.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+    });
+    body.appendChild(button);
+  </script>
 </body>
 </html>
