@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Weiben - Wheel of fortune</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+
+  <body>
+    <div id="app">
+      <img class="marker" src="../Assets/marker.png" />
+      <img class="wheel" src="../Assets/wheel.png" />
+      <img class="button" src="../Assets/button.png" />
+    </div>
+
+    <script src="../js/Wheel_of_Fortune.js"></script>
+  </body>
+
+<style>
+	#app {
+  width: 400px;
+  height: 400px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.marker {
+  position: absolute;
+  width: 60px;
+  left: 172px;
+  top: -20px;
+  z-index: 2;
+}
+
+.wheel {
+  width: 100%;
+  height: 100%;
+}
+
+.button {
+  display: block;
+  width: 250px;
+  margin: 40px auto;
+  cursor: pointer;
+}
+
+.button:hover {
+  opacity: 0.8;
+}
+
+.blur {
+  animation: blur 10s;
+}
+
+@keyframes blur {
+  0% {
+    filter: blur(1.5px);
+  }
+  80% {
+    filter: blur(1.5px);
+  }
+  100% {
+    filter: blur(0px);
+  }
+}
+
+</style>
+</html>
