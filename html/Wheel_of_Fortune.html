@@ -1,29 +1,32 @@
 <body>
-    <div id="app">
-      <div class="game-container">
-        <div class="wheel-container">
-          <img class="wheel" src="../Assets/wheel.png" />
-          <img class="marker" src="../Assets/marker.png" />
-        </div>
-        <img class="button" src="../Assets/button.png" />
-
-        <div class="bet-container">
-          <label for="bet-input">Place your bet:</label>
-          <input type="text" id="bet-input" />
-          <button id="bet-button">Place Bet</button>
-        </div>
-
-        <div class="earnings-container">
-          <h2>Earnings:</h2>
-          <span id="earnings">$0</span>
-        </div>
-
-        <div class="time-container">
-          <h2>Time Left:</h2>
-          <span id="time-left">60 seconds</span>
-        </div>
-      </div>
-    </div>
+	<body>
+		<div id="app">
+		  <div class="game-container">
+			<div class="wheel-container">
+			  <img class="wheel" src="../Assets/wheel.png" />
+			  <img class="marker" src="../Assets/marker.png" />
+			</div>
+			<img class="button" src="../Assets/button.png" />
+		  </div>
+	
+		  <div class="updates-container">
+			<div class="bet-container">
+			  <label for="bet-input">Place your bet:</label>
+			  <input type="text" id="bet-input" />
+			  <button id="bet-button">Place Bet</button>
+			</div>
+	
+			<div class="earnings-container">
+			  <h2>Earnings:</h2>
+			  <span id="earnings">$0</span>
+			</div>
+	
+			<div class="time-container">
+			  <h2>Time Left:</h2>
+			  <span id="time-left">60 seconds</span>
+			</div>
+		  </div>
+		</div>
 
     <script src="../js/Wheel_of_Fortune.js"></script>
   </body>
@@ -31,6 +34,7 @@
 <style>
 	#app {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
@@ -38,6 +42,7 @@
 
 .game-container {
   text-align: center;
+  margin-bottom: 20px;
 }
 
 .wheel-container {
@@ -59,7 +64,17 @@
 
 .button {
   max-width: 100%;
-  margin-bottom: 20px;
+}
+
+.box-container {
+  text-align: center;
+  margin: 0 auto;
+  max-width: 500px;
+}
+
+.updates-container {
+  background-color: #f2f2f2;
+  padding: 20px;
 }
 
 .bet-container {
@@ -72,10 +87,12 @@
 
 .bet-container input {
   margin-top: 5px;
+  width: 100%;
 }
 
 .bet-container button {
   margin-top: 10px;
+  width: 100%;
 }
 
 .earnings-container,
@@ -87,6 +104,5 @@
 .time-container h2 {
   margin-bottom: 5px;
 }
-
 </style>
 </html>
