@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Stripe Payment Page</title>
+  <!-- Include Stripe.js -->
+  <script src="https://js.stripe.com/v3/"></script>
+  <style>
+    /* Add your custom CSS styles here */
+  </style>
+</head>
+<body>
+  <h1>Stripe Payment Page</h1>
+  <form id="payment-form">
+    <div>
+      <label for="card-number">Card Number</label>
+      <input id="card-number" type="text" placeholder="Card Number" required>
+    </div>
+    <div>
+      <label for="card-expiry">Card Expiry</label>
+      <input id="card-expiry" type="text" placeholder="MM/YY" required>
+    </div>
+    <div>
+      <label for="card-cvc">CVC</label>
+      <input id="card-cvc" type="text" placeholder="CVC" required>
+    </div>
+    <button type="submit">Pay</button>
+  </form>
+
+  <div id="payment-result"></div>
+
+  <!-- Include your JavaScript code here -->
+  <script src="your-script.js"></script>
+</body>
+<style>
+    body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+
+h1 {
+  text-align: center;
+}
+
+form {
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+}
+
+form div {
+  margin-bottom: 10px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+button[type="submit"] {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#payment-result {
+  margin-top: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+
+</style>
+</html>
