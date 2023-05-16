@@ -88,7 +88,7 @@ function stay() {
     yourSum = reduceAce(yourSum, yourAceCount);
 
     canHit = false;
-    document.getElementById("hidden").src = "./cards/" + hidden + ".png";
+    document.getElementById("hidden").src = "../cards/" + hidden + ".png";
 
     let message = "";
     if (yourSum > 21) {
