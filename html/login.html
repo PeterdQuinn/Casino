@@ -1,157 +1,334 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="index.css">
-  <title>Login</title>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Log In / Sign Up </title>
+<link rel="stylesheet" href="style.css">
 </head>
-<body class="light-mode">
-  <section class="section">
-    <div class="form-box">
-      <button class="mode-toggle" aria-label="Toggle light/dark mode">
-        <ion-icon name="moon-outline"></ion-icon>
-        <ion-icon name="sunny-outline"></ion-icon>
-      </button>
-      <div class="form-value">
-        <form action="">
-          <h2>Login</h2>
-          <div class="inputbox">
-            <ion-icon name="mail-outline"></ion-icon>
-            <input type="email" required>
-            <label for="">Email</label>
-          </div>
-          <div class="inputbox">
-            <ion-icon name="lock-closed-outline"></ion-icon>
-            <input type="password" required>
-            <label for="">Password</label>
-          </div>
-          <div class="forget">
-            <label for=""><input type="checkbox">Remember Me  <a href="#">Forget Password</a></label>
-          </div>
-          <button>Log in</button>
-          <div class="register">
-            <p>Don't have an account <a href="#">Register</a></p>
-          </div>
-        </form>
-      </div>
-    </div>
-  </section>
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-  <script>
-    const button = document.querySelector('.mode-toggle');
-    const body = document.querySelector('body');
-    button.addEventListener('click', () => {
-      body.classList.toggle('dark-mode');
-      button.classList.toggle('active');
-      const currentLabel = button.getAttribute('aria-label');
-      const newLabel = currentLabel === 'Toggle light/dark mode' ? 'Toggle dark/light mode' : 'Toggle light/dark mode';
-      button.setAttribute('aria-label', newLabel);
-    });
-  </script>
+<body>
+<div class="section">
+<div class="container">
+<div class="row full-height justify-content-center">
+<div class="col-12 text-center align-self-center py-5">
+<div class="section pb-5 pt-5 pt-sm-2 text-center">
+<h6 class="mb-0 pb-3"><span>Log In </span><span>Sign Up</span></h6>
+<input class="checkbox" type="checkbox" id="reg-log" name="reg-log"/>
+<label for="reg-log"></label>
+<div class="card-3d-wrap mx-auto">
+<div class="card-3d-wrapper">
+<div class="card-front">
+<div class="center-wrap">
+<div class="section text-center">
+<h4 class="mb-4 pb-3">Log In</h4>
+<div class="form-group">
+<input type="email" name="logemail" class="form-style" placeholder="Your Email" id="logemail" autocomplete="off">
+<i class="input-icon uil uil-at"></i>
+</div>
+<div class="form-group mt-2">
+<input type="password" name="logpass" class="form-style" placeholder="Your Password" id="logpass" autocomplete="off">
+<i class="input-icon uil uil-lock-alt"></i>
+</div>
+<a href="#" class="btn mt-4">submit</a>
+<p class="mb-0 mt-4 text-center"><a href="#0" class="link">Forgot your password?</a></p>
+</div>
+</div>
+</div>
+<div class="card-back">
+<div class="center-wrap">
+<div class="section text-center">
+<h4 class="mb-4 pb-3">Sign Up</h4>
+<div class="form-group">
+<input type="text" name="logname" class="form-style" placeholder="Your Full Name" id="logname" autocomplete="off">
+<i class="input-icon uil uil-user"></i>
+</div>
+<div class="form-group mt-2">
+<input type="email" name="logemail" class="form-style" placeholder="Your Email" id="logemail" autocomplete="off">
+<i class="input-icon uil uil-at"></i>
+</div>
+<div class="form-group mt-2">
+<input type="password" name="logpass" class="form-style" placeholder="Your Password" id="logpass" autocomplete="off">
+<i class="input-icon uil uil-lock-alt"></i>
+</div>
+<a href="#" class="btn mt-4">submit</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </body>
-</html>
-
-      <style>
-       /* Light mode styles */
-body {
-  background-color: transparent;
-  color: #333;
-  background-image: url('../Assets/buttons.png');
-  background-repeat: no-repeat;
-  background-size: cover;
+<style>
+  @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900');  
+@import url('https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css');  
+@import url('https://unicons.iconscout.com/release/v2.1.9/css/unicons.css');  
+body{  
+     font-family: 'Poppins', sans-serif;  
+     font-weight: 300;  
+     font-size: 15px;  
+     line-height: 1.7;  
+     color: #c4c3ca;  
+     background-color: #1f2029;  
+     overflow-x: hidden;  
+}  
+a {  
+     cursor: pointer;  
+ transition: all 200ms linear;  
+}  
+a:hover {  
+     text-decoration: none;  
+}  
+.link {  
+ color: #c4c3ca;  
+}  
+.link:hover {  
+ color: #ffeba7;  
+}  
+p {  
+ font-weight: 500;  
+ font-size: 14px;  
+ line-height: 1.7;  
+}  
+h4 {  
+ font-weight: 600;  
+}  
+h6 span{  
+ padding: 0 20px;  
+ text-transform: uppercase;  
+ font-weight: 700;  
+}  
+.section{  
+ position: relative;  
+ width: 100%;  
+ display: block;  
+}  
+.full-height{  
+ min-height: 100vh;  
+}  
+[type="checkbox"]:checked,  
+[type="checkbox"]:not(:checked){  
+ position: absolute;  
+ left: -9999px;  
+}  
+.checkbox:checked + label,  
+.checkbox:not(:checked) + label{  
+ position: relative;  
+ display: block;  
+ text-align: center;  
+ width: 60px;  
+ height: 16px;  
+ border-radius: 8px;  
+ padding: 0;  
+ margin: 10px auto;  
+ cursor: pointer;  
+ background-color: #ffeba7;  
+}  
+.checkbox:checked + label:before,  
+.checkbox:not(:checked) + label:before{  
+ position: absolute;  
+ display: block;  
+ width: 36px;  
+ height: 36px;  
+ border-radius: 50%;  
+ color: #ffeba7;  
+ background-color: #102770;  
+ font-family: 'unicons';  
+ content: 'eb4f';  
+ z-index: 20;  
+ top: -10px;  
+ left: -10px;  
+ line-height: 36px;  
+ text-align: center;  
+ font-size: 24px;  
+ transition: all 0.5s ease;  
+}  
+.checkbox:checked + label:before {  
+ transform: translateX(44px) rotate(-270deg);  
+}  
+.card-3d-wrap {  
+ position: relative;  
+ width: 440px;  
+ max-width: 100%;  
+ height: 400px;  
+ -webkit-transform-style: preserve-3d;  
+ transform-style: preserve-3d;  
+ perspective: 800px;  
+ margin-top: 60px;  
+}  
+.card-3d-wrapper {  
+ width: 100%;  
+ height: 100%;  
+ position:absolute;    
+ top: 0;  
+ left: 0;   
+ -webkit-transform-style: preserve-3d;  
+ transform-style: preserve-3d;  
+ transition: all 600ms ease-out;   
+}  
+.card-front, .card-back {  
+ width: 100%;  
+ height: 100%;  
+ background-color: #2a2b38;  
+ background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat.svg');  
+ background-position: bottom center;  
+ background-repeat: no-repeat;  
+ background-size: 300%;  
+ position: absolute;  
+ border-radius: 6px;  
+ left: 0;  
+ top: 0;  
+ -webkit-transform-style: preserve-3d;  
+ transform-style: preserve-3d;  
+ -webkit-backface-visibility: hidden;  
+ -moz-backface-visibility: hidden;  
+ -o-backface-visibility: hidden;  
+ backface-visibility: hidden;  
+}  
+.card-back {  
+ transform: rotateY(180deg);  
+}  
+.checkbox:checked ~ .card-3d-wrap .card-3d-wrapper {  
+ transform: rotateY(180deg);  
+}  
+.center-wrap{  
+ position: absolute;  
+ width: 100%;  
+ padding: 0 35px;  
+ top: 50%;  
+ left: 0;  
+ transform: translate3d(0, -50%, 35px) perspective(100px);  
+ z-index: 20;  
+ display: block;  
+}  
+.form-group{   
+ position: relative;  
+ display: block;  
+  margin: 0;  
+  padding: 0;  
+}  
+.form-style {  
+ padding: 13px 20px;  
+ padding-left: 55px;  
+ height: 48px;  
+ width: 100%;  
+ font-weight: 500;  
+ border-radius: 4px;  
+ font-size: 14px;  
+ line-height: 22px;  
+ letter-spacing: 0.5px;  
+ outline: none;  
+ color: #c4c3ca;  
+ background-color: #1f2029;  
+ border: none;  
+ -webkit-transition: all 200ms linear;  
+ transition: all 200ms linear;  
+ box-shadow: 0 4px 8px 0 rgba(21,21,21,.2);  
+}  
+.form-style:focus,  
+.form-style:active {  
+ border: none;  
+ outline: none;  
+ box-shadow: 0 4px 8px 0 rgba(21,21,21,.2);  
+}  
+.input-icon {  
+ position: absolute;  
+ top: 0;  
+ left: 18px;  
+ height: 48px;  
+ font-size: 24px;  
+ line-height: 48px;  
+ text-align: left;  
+ color: #ffeba7;  
+ -webkit-transition: all 200ms linear;  
+  transition: all 200ms linear;  
+}  
+.form-group input:-ms-input-placeholder {  
+ color: #c4c3ca;  
+ opacity: 0.7;  
+ -webkit-transition: all 200ms linear;  
+  transition: all 200ms linear;  
+}  
+.form-group input::-moz-placeholder {  
+ color: #c4c3ca;  
+ opacity: 0.7;  
+ -webkit-transition: all 200ms linear;  
+  transition: all 200ms linear;  
+}  
+.form-group input:-moz-placeholder {  
+ color: #c4c3ca;  
+ opacity: 0.7;  
+ -webkit-transition: all 200ms linear;  
+  transition: all 200ms linear;  
+}  
+.form-group input::-webkit-input-placeholder {  
+ color: #c4c3ca;  
+ opacity: 0.7;  
+ -webkit-transition: all 200ms linear;  
+  transition: all 200ms linear;  
+}  
+.form-group input:focus:-ms-input-placeholder {  
+ opacity: 0;  
+ -webkit-transition: all 200ms linear;  
+  transition: all 200ms linear;  
+}  
+.form-group input:focus::-moz-placeholder {  
+ opacity: 0;  
+ -webkit-transition: all 200ms linear;  
+  transition: all 200ms linear;  
+}  
+.form-group input:focus:-moz-placeholder {  
+ opacity: 0;  
+ -webkit-transition: all 200ms linear;  
+  transition: all 200ms linear;  
+}  
+.form-group input:focus::-webkit-input-placeholder {  
+ opacity: 0;  
+ -webkit-transition: all 200ms linear;  
+  transition: all 200ms linear;  
+}  
+.btn{   
+ border-radius: 4px;  
+ height: 44px;  
+ font-size: 13px;  
+ font-weight: 600;  
+ text-transform: uppercase;  
+ -webkit-transition : all 200ms linear;  
+ transition: all 200ms linear;  
+ padding: 0 30px;  
+ letter-spacing: 1px;  
+ display: -webkit-inline-flex;  
+ display: -ms-inline-flexbox;  
+ display: inline-flex;  
+ -webkit-align-items: center;  
+ -moz-align-items: center;  
+ -ms-align-items: center;  
+ align-items: center;  
+ -webkit-justify-content: center;  
+ -moz-justify-content: center;  
+ -ms-justify-content: center;  
+ justify-content: center;  
+ -ms-flex-pack: center;  
+ text-align: center;  
+ border: none;  
+ background-color: #ffeba7;  
+ color: #102770;  
+ box-shadow: 0 8px 24px 0 rgba(255,235,167,.2);  
+}  
+.btn:active,  
+.btn:focus{   
+ background-color: #102770;  
+ color: #ffeba7;  
+ box-shadow: 0 8px 24px 0 rgba(16,39,112,.2);  
+}  
+.btn:hover{   
+ background-color: #102770;  
+ color: #ffeba7;  
+ box-shadow: 0 8px 24px 0 rgba(16,39,112,.2);  
 }
-
-.section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
-.form-box {
-  width: 350px;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  position: relative;
-  overflow: hidden;
-  text-align: center;
-}
-
-.form-box h2 {
-  margin-top: 20px;
-}
-
-.mode-toggle {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background-color: transparent;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.mode-toggle ion-icon {
-  font-size: 28px;
-  color: #333;
-  transition: color 0.3s ease;
-}
-
-/* Dark mode styles */
-body.dark-mode {
-  background-color: transparent;
-  color: hsl(49, 94%, 44%);
-}
-
-.form-box.dark-mode {
-  background-color: #222;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-}
-
-.form-box.dark-mode h2,
-.inputbox.dark-mode ion-icon,
-.inputbox.dark-mode label,
-.forget.dark-mode label,
-.register.dark-mode a {
-  color: #f0f0f0;
-}
-
-.button-box.dark-mode button {
-  background-color: #0077d7;
-  color: #f0f0f0;
-}
-
-.button-box.dark-mode button:hover {
-  background-color: #0095ff;
-}
-
-.mode-toggle.dark-mode ion-icon {
-  color: #f0f0f0;
-}
-
-
-
-
-
-      </style>
-    </div>
-  </section>
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-  <script>
-    const body = document.querySelector('body');
-    const button = document.createElement('button');
-    button.innerText = 'Toggle Dark Mode';
-    button.addEventListener('click', () => {
-      body.classList.toggle('dark-mode');
-    });
-    body.appendChild(button);
-  </script>
-</body>
+</style>
 </html>
