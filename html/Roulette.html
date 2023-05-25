@@ -8,17 +8,7 @@
 </head>
 <body>
   <div class="roulette-container">
-    <div class="roulette-wheel">
-        <div class="roulette-number"></div>
-    </div>
-    <button class="spin-button">Spin</button>
-    <div class="betting-grid">
-        <div class="bet-box" data-number="0">0</div>
-        <!-- add other numbers here -->
-        <div class="bet-box" data-number="1">1</div>
-        <!-- ... -->
-        <div class="bet-box" data-number="36">36</div>
-    </div>
+    <div class="roulette-wheel"></div>
 </div>
     <script src="../js/Roulette.js"></script>
 </body>
@@ -27,66 +17,29 @@
 
 <style>
 
-   /* roulette.css */
-.roulette-container {
+body {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #eee;
+    margin: 0;
+    background-color: #fff;
+}
+
+.roulette-container {
+    position: relative;
+    width: 400px;
+    height: 400px;
 }
 
 .roulette-wheel {
-    width: 200px;
-    height: 200px;
+    position: relative;
     border-radius: 50%;
-    background-color: #ff0000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 100%;
+    height: 100%;
+    border: 16px solid #000;
+    box-sizing: border-box;
+    background: linear-gradient(0deg, rgba(255,0,0,1) 0%, rgba(0,0,0,1) 50%, rgba(255,0,0,1) 100%);
 }
-
-.roulette-number {
-    font-size: 3em;
-    color: #fff;
-}
-
-.spin-button {
-    margin-top: 20px;
-    padding: 10px 20px;
-    font-size: 1.2em;
-}
-.betting-grid {
-    margin-top: 20px;
-    border-collapse: separate;
-    border-spacing: 10px;
-}
-
-.bet-box {
-    width: 50px;
-    height: 50px;
-    border: 1px solid #000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-}
-
-.bet-box[data-number="0"] {
-    background-color: #008000;
-    color: #fff;
-}
-
-.bet-box:nth-child(2n) {
-    background-color: #000;
-    color: #fff;
-}
-
-.bet-box:nth-child(2n+1) {
-    background-color: #ff0000;
-    color: #fff;
-}
-
-
 
 </style>
