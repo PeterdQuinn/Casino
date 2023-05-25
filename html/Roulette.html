@@ -7,22 +7,19 @@
     <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
-    <header>
-        <h1>Russian Roulette</h1>
-    </header>
-    <main>
-        <div id="game-container" class="game2-box">
-            <p>Try your luck in Russian Roulette! Press the trigger and hope for the best!</p>
-            <button id="trigger-btn">Pull the trigger</button>
-            <p id="result"></p>
-            <div class="place-bet">
-               
-                <button class="bet-btn" data-value="1">$1</button>
-                <button class="bet-btn" data-value="5">$5</button>
-                <button class="bet-btn" data-value="10">$10</button>
-            </div>
-        </div>
-    </main>
+  <div class="roulette-container">
+    <div class="roulette-wheel">
+        <div class="roulette-number"></div>
+    </div>
+    <button class="spin-button">Spin</button>
+    <div class="betting-grid">
+        <div class="bet-box" data-number="0">0</div>
+        <!-- add other numbers here -->
+        <div class="bet-box" data-number="1">1</div>
+        <!-- ... -->
+        <div class="bet-box" data-number="36">36</div>
+    </div>
+</div>
     <script src="../js/Roulette.js"></script>
 </body>
 </html>
@@ -30,86 +27,64 @@
 
 <style>
 
-    /* General styles */
-html {
-  height: 100%;
+   /* roulette.css */
+.roulette-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #eee;
 }
-body {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-  background: linear-gradient(#141e30, #243b55);
-  color: #fff;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
+
+.roulette-wheel {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: #ff0000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-header {
-  background-color: #ff9800;
-  padding: 20px;
+
+.roulette-number {
+    font-size: 3em;
+    color: #fff;
 }
-h1 {
-  margin: 0;
-  font-size: 36px;
+
+.spin-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1.2em;
 }
-main {
-  flex-grow: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.betting-grid {
+    margin-top: 20px;
+    border-collapse: separate;
+    border-spacing: 10px;
 }
-#game-container {
-  padding: 40px;
-  background: rgba(0, 0, 0, .5);
-  box-sizing: border-box;
-  box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
-  border-radius: 10px;
-  text-align: center;
-  position: relative;
+
+.bet-box {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
 }
-.game2-box p {
-  font-size: 18px;
-  margin-bottom: 20px;
+
+.bet-box[data-number="0"] {
+    background-color: #008000;
+    color: #fff;
 }
-#trigger-btn {
-  background-color: #4CAF50;
-  border: none;
-  color: #fff;
-  cursor: pointer;
-  font-size: 16px;
-  padding: 10px 20px;
-  border-radius: 3px;
-  margin-bottom: 20px;
+
+.bet-box:nth-child(2n) {
+    background-color: #000;
+    color: #fff;
 }
-#result {
-  font-size: 24px;
-  margin-bottom: 30px;
-}
-.place-bet {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-.place-bet p {
-  font-size: 18px;
-  margin-bottom: 10px;
-}
-.bet-btn {
-  background-color: #4CAF50;
-  border: none;
-  color: #fff;
-  cursor: pointer;
-  font-size: 16px;
-  padding: 10px 20px;
-  border-radius: 3px;
-  margin-right: 10px;
-}
-.bet-btn:last-child {
-  margin-right: 0;
-}
-.bet-btn.active {
-  background-color: #3e8e41;
+
+.bet-box:nth-child(2n+1) {
+    background-color: #ff0000;
+    color: #fff;
 }
 
 

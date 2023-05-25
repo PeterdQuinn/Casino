@@ -1,38 +1,27 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const triggerBtn = document.getElementById("trigger-btn");
-    const result = document.getElementById("result");
-  
-    triggerBtn.addEventListener("click", function() {
-        const randomNumber = Math.random();
-  
-        if (randomNumber < 0.1666) {
-            result.textContent = "Bang! Your time to go!";
-        } else {
-            result.textContent = "Click! Not your time amigo!";
-        }
-    });
-    
-    // Add event listeners to the bet buttons
-    const bet1Btn = document.getElementById("bet-1");
-    const bet5Btn = document.getElementById("bet-5");
-    const bet10Btn = document.getElementById("bet-10");
-    
-    bet1Btn.addEventListener("click", function() {
-      placeBet(1);
-    });
-    
-    bet5Btn.addEventListener("click", function() {
-      placeBet(5);
-    });
-    
-    bet10Btn.addEventListener("click", function() {
-      placeBet(10);
-    });
-    
-    // Function to place a bet
-    function placeBet(amount) {
-      console.log(`Placing a $${amount} bet`);
-      // Add your code to place the bet here
-    }
+/* roulette.js */
+
+document.addEventListener('DOMContentLoaded', (event) => {
+  const spinButton = document.querySelector('.spin-button');
+  const rouletteNumber = document.querySelector('.roulette-number');
+  const betBoxes = document.querySelectorAll('.bet-box');
+  let selectedNumber = null;
+
+  spinButton.addEventListener('click', () => {
+      const number = Math.floor(Math.random() * 36) + 1;
+      rouletteNumber.textContent = number;
+      if (selectedNumber === number) {
+          alert('You win!');
+      } else {
+          alert('You lose!');
+      }
+      selectedNumber = null;
   });
-  
+
+  betBoxes.forEach(box => {
+      box.addEventListener('click', () => {
+          selectedNumber = parseInt(box.dataset.number, 10);
+          betBoxes.forEach(b => b.classList.remove('selected'));
+          box.classList.add('selected');
+      });
+  });
+});
