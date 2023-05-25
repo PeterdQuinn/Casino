@@ -3,43 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Russian Roulette - Casino App</title>
+    <title>Roulette - Casino App</title>
     <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
-  <div class="roulette-container">
-    <div class="roulette-wheel"></div>
+  <div class="game-container">
+    <button id="spin">Spin the wheel</button>
+    <div class="roulette-container">
+        <div class="roulette-wheel">
+            <div class="number">0</div>
+            <div class="number">32</div>
+            <div class="number">15</div>
+            <!-- Add more numbers as needed -->
+        </div>
+    </div>
+    <div class="betting-area">
+        <div class="bet">0</div>
+        <div class="bet">32</div>
+        <div class="bet">15</div>
+        <!-- Add more bets as needed -->
+    </div>
 </div>
+
     <script src="../js/Roulette.js"></script>
 </body>
 </html>
 
 
 <style>
+/* roulette.css */
 
 body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     height: 100vh;
     margin: 0;
     background-color: #fff;
 }
 
+.game-container {
+    width: 400px;
+}
+
 .roulette-container {
     position: relative;
-    width: 400px;
-    height: 400px;
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%;  /* This makes the container square */
 }
 
 .roulette-wheel {
-    position: relative;
+    position: absolute;
     border-radius: 50%;
     width: 100%;
     height: 100%;
     border: 16px solid #000;
     box-sizing: border-box;
     background: linear-gradient(0deg, rgba(255,0,0,1) 0%, rgba(0,0,0,1) 50%, rgba(255,0,0,1) 100%);
+    transition: transform 3s ease-out;
 }
 
+.number {
+  position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 3em;
+}
+
+.betting-area {
+  display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    background-color: #004225;  
+    padding: 20px;
+    border-radius: 10px;
+  
+   
+}
+
+.bet {
+  width: 60px; /* Increased box size */
+    height: 60px;
+    border: 1px solid #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #007A33;  
+    color: #fff;  
+    font-size: 3.5em; 
+}
 </style>

@@ -25,3 +25,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
       });
   });
 });
+/* roulette.js */
+
+var spinDegree = 0; // Move this variable outside the event handler
+
+document.getElementById('spin').addEventListener('click', function() {
+    var rouletteWheel = document.querySelector('.roulette-wheel');
+    spinDegree += Math.random() * 360 + 360 * 5; // Add to the existing rotation
+    rouletteWheel.style.transform = 'rotate(' + spinDegree + 'deg)';
+});
+
