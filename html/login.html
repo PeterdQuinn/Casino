@@ -5,89 +5,93 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vegas Themed Website</title>
     <style>
-        body {
-            transition: all 0.5s ease;
-            background-image: url('../Assets/Moon.png');
-            background-size: cover;
-            background-repeat: no-repeat;
-        }
-        .light-mode {
-            background-color: rgba(144,238,144,0.5); /* Light green with 50% opacity */
-            color: black;
-        }
-        .dark-mode {
-            background-color: rgba(34,139,34,0.5); /* Dark green with 50% opacity */
-            color: white;
-        }
-        button {
-            padding: 10px 20px;
-            cursor: pointer;
-            background-color: gold;
-            border: none;
-            color: black;
-            font-weight: bold;
-            transition: all 0.5s ease;
-        }
-        button:hover {
-            background-color: darkgoldenrod;
-            color: white;
-        }
-        .blackjack-table {
-            border-collapse: collapse;
-            width: 100%;
-            max-width: 600px;
-            margin: 0 auto;
-            background-color: darkgreen;
-            color: white;
-        }
+      body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    transition: all 0.5s ease;
+    background-image: url('casino-background.jpg'); /* replace with your background image */
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+}
 
-        .blackjack-table th, .blackjack-table td {
-            border: 1px solid white;
-            padding: 10px;
-            text-align: center;
-        }
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.5));
+    z-index: -1;
+}
+.light-mode {
+    background-color: rgba(0, 255, 0, 0.1); /* Neon green with 10% opacity */
+    color: black;
+}
+.dark-mode {
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black */
+    color: #FFD700; /* Gold */
+}
+.form-container {
+    max-width: 300px;
+    padding: 16px;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
+    color: black;
+    border-radius: 4px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+}
+.form-container input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+.form-container button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    color: black;
+    background-color: hsl(40, 16%, 96%); /* Gold */
+    cursor: pointer;
+    font-size: 16px;
+    box-shadow: 0px 0px 10px 0px hwb(315 3% 6%); /* Neon pink glow */
+}
+#login-form, #signup-form {
+    display: none;
+}
 
-        .blackjack-table th {
-            background-color: darkslategray;
-        }
-
-        body {
-            background-color: black;
-            color: white;
-            font-family: Arial, sans-serif;
-            text-align: center;
-        }
     </style>
 </head>
 <body class="light-mode">
-    <h1>Welcome to the Vegas Themed Website!</h1>
-    <p>This is a basic webpage with a Vegas theme.</p>
+    <div class="form-container" id="login-form">
+        <h1>Login</h1>
+        <form>
+            <input type="text" placeholder="Username" required>
+            <input type="password" placeholder="Password" required>
+            <button type="submit">Log in</button>
+        </form>
+        <button onclick="switchForm('signup')">Sign up instead</button>
+    </div>
+    <div class="form-container" id="signup-form">
+        <h1>Sign up</h1>
+        <form>
+            <input type="text" placeholder="Username" required>
+            <input type="password" placeholder="Password" required>
+            <button type="submit">Sign up</button>
+        </form>
+        <button onclick="switchForm('login')">Log in instead</button>
+    </div>
     <button id="toggle-mode">Toggle Dark/Light Mode</button>
-    <h1>Blackjack Table</h1>
-    <table class="blackjack-table">
-        <thead>
-            <tr>
-                <th>Player</th>
-                <th>Cards</th>
-                <th>Points</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Player 1</td>
-                <td>Ace of Spades, 10 of Hearts</td>
-                <td>21</td>
-            </tr>
-            <tr>
-                <td>Player 2</td>
-                <td>8 of Clubs, 7 of Diamonds</td>
-                <td>15</td>
-            </tr>
-            <!-- Add more players as necessary -->
-        </tbody>
-    </table>
-
     <script>
+        function switchForm(formType) {
+            document.getElementById('login-form').style.display = formType === 'login' ? 'block' : 'none';
+            document.getElementById('signup-form').style.display = formType === 'signup' ? 'block' : 'none';
+        }
+
         document.getElementById('toggle-mode').addEventListener('click', function() {
             var body = document.body;
             if (body.classList.contains('light-mode')) {
@@ -98,6 +102,9 @@
                 body.classList.add('light-mode');
             }
         });
+
+        // Initialize with the login form
+        switchForm('login');
     </script>
 </body>
 </html>
