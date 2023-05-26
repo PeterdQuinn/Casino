@@ -3,61 +3,209 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Card Finding App</title>
+    <title>Memory - Moon Games</title>
     <style>
         body {
+            background-color: #1b1b1b;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
             height: 100vh;
             font-family: Arial, sans-serif;
+            color: #f4c20d;
+        }
+
+        .header {
+            background-color: #333;
+            padding: 20px;
+            width: 100%;
+            text-align: center;
+            font-size: 24px;
+        }
+
+        .game-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            max-width: 400px;
+            margin-top: 30px;
         }
 
         .card {
             position: relative;
             width: 100px;
             height: 150px;
-            background-color: #f4f4f4;
+            background-color: #252525;
             border-radius: 8px;
             margin: 10px;
             cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-10px);
-        }
-
-        .card .number {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
             font-size: 24px;
             font-weight: bold;
-            color: #000;
-            opacity: 0.7;
-            transition: font-size 0.3s ease;
+            color: #f4c20d;
+            transform-style: preserve-3d;
+            transition: transform 0.5s;
         }
 
-        .card:hover .number {
-            font-size: 30px;
-            opacity: 1;
+        .card.flipped {
+            transform: rotateY(180deg);
+        }
+
+        .card-inner {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            transform-style: preserve-3d;
+            transition: transform 0.5s;
+        }
+
+        .card-front,
+        .card-back {
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: #f4c20d;
+        }
+
+        .card-front {
+            background-color: #252525;
+            border-radius: 8px;
+        }
+
+        .card-back {
+            background-color: #f4c20d;
+            border-radius: 8px;
+            color: #252525;
+            transform: rotateY(180deg);
+        }
+
+        .matched {
+            visibility: hidden;
+        }
+
+        .footer {
+            background-color: #333;
+            padding: 20px;
+            width: 100%;
+            text-align: center;
+            font-size: 18px;
         }
     </style>
 </head>
 <body>
-    <div class="card">
-        <div class="number">1</div>
+    <div class="header">
+        <h1>Advanced Memory Game</h1>
     </div>
-    <div class="card">
-        <div class="number">2</div>
+
+    <div class="game-container">
+        <div class="card" data-value="1">
+            <div class="card-inner">
+                <div class="card-front"></div>
+                <div class="card-back">1</div>
+            </div>
+        </div>
+        <div class="card" data-value="2">
+            <div class="card-inner">
+                <div class="card-front"></div>
+                <div class="card-back">2</div>
+            </div>
+        </div>
+        <div class="card" data-value="3">
+            <div class="card-inner">
+                <div class="card-front"></div>
+                <div class="card-back">3</div>
+            </div>
+        </div>
+        <div class="card" data-value="4">
+            <div class="card-inner">
+                <div class="card-front"></div>
+                <div class="card-back">4</div>
+            </div>
+        </div>
+        <div class="card" data-value="1">
+            <div class="card-inner">
+                <div class="card-front"></div>
+                <div class="card-back">1</div>
+            </div>
+        </div>
+        <div class="card" data-value="2">
+            <div class="card-inner">
+                <div class="card-front"></div>
+                <div class="card-back">2</div>
+            </div>
+        </div>
+        <div class="card" data-value="3">
+            <div class="card-inner">
+                <div class="card-front"></div>
+                <div class="card-back">3</div>
+            </div>
+        </div>
+        <div class="card" data-value="4">
+            <div class="card-inner">
+                <div class="card-front"></div>
+                <div class="card-back">4</div>
+            </div>
+        </div>
     </div>
-    <div class="card">
-        <div class="number">1</div>
+
+    <div class="footer">
+        <p>Moon Games</p>
     </div>
-    <div class="card">
-        <div class="number">2</div>
-    </div>
+
+    <script>
+        const cards = document.querySelectorAll('.card');
+        let flippedCards = [];
+        let matchedPairs = 0;
+
+        cards.forEach(card => {
+            card.addEventListener('click', flipCard);
+        });
+
+        function flipCard() {
+            if (this.classList.contains('flipped')) return;
+
+            this.classList.add('flipped');
+            flippedCards.push(this);
+
+            if (flippedCards.length === 2) {
+                setTimeout(checkMatch, 500);
+            }
+        }
+
+        function checkMatch() {
+            const value1 = flippedCards[0].getAttribute('data-value');
+            const value2 = flippedCards[1].getAttribute('data-value');
+
+            if (value1 === value2) {
+                flippedCards.forEach(card => {
+                    card.classList.add('matched');
+                });
+                flippedCards = [];
+                matchedPairs++;
+                checkGameCompletion();
+            } else {
+                flippedCards.forEach(card => {
+                    card.classList.remove('flipped');
+                });
+                flippedCards = [];
+            }
+        }
+
+        function checkGameCompletion() {
+            if (matchedPairs === cards.length / 2) {
+                setTimeout(() => {
+                    alert('Congratulations! You won the memory game.');
+                }, 500);
+            }
+        }
+    </script>
 </body>
 </html>

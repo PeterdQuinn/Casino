@@ -19,9 +19,9 @@
             <p id="result"></p>
             <div id="bet-container">
                 <p>Bet amount:</p>
-                <button id="bet-1">$1</button>
-                <button id="bet-5">$5</button>
-                <button id="bet-10">$10</button>
+                <button class="bet-button" id="bet-1">$1</button>
+                <button class="bet-button" id="bet-5">$5</button>
+                <button class="bet-button" id="bet-10">$10</button>
             </div>
         </div>
     </main>
@@ -71,7 +71,8 @@ main {
   font-size: 2rem;
 }
 
-#higher-btn, #lower-btn {
+#higher-btn,
+#lower-btn {
   display: block;
   margin: 20px auto;
   font-size: 1.2rem;
@@ -84,7 +85,8 @@ main {
   transition: background-color 0.3s ease;
 }
 
-#higher-btn:hover, #lower-btn:hover {
+#higher-btn:hover,
+#lower-btn:hover {
   background-color: #1e2b39;
 }
 
@@ -93,7 +95,6 @@ main {
   text-align: center;
   margin-top: 20px;
 }
-
 
 #bet-container {
   display: flex;
@@ -117,16 +118,6 @@ main {
   background-color: #3e8e41;
 }
 
-
-
-
-
-
-
-
-
-
-
 /* Desktop Styles */
 @media screen and (min-width: 768px) {
   body {
@@ -142,6 +133,7 @@ main {
     margin: 0 auto;
   }
 }
+
 /* Tablet styles */
 @media (min-width: 768px) {
   h1 {
@@ -189,6 +181,7 @@ main {
     font-size: 28px;
   }
 }
+
 .bet-button {
   font-size: 20px;
   padding: 20px 30px;
@@ -207,6 +200,7 @@ main {
     padding: 14px 20px;
   }
 }
+
 
 
 
