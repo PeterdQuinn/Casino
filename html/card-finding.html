@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Finding App</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+
+        .card {
+            position: relative;
+            width: 100px;
+            height: 150px;
+            background-color: #f4f4f4;
+            border-radius: 8px;
+            margin: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card .number {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 24px;
+            font-weight: bold;
+            color: #000;
+            opacity: 0.7;
+            transition: font-size 0.3s ease;
+        }
+
+        .card:hover .number {
+            font-size: 30px;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="number">1</div>
+    </div>
+    <div class="card">
+        <div class="number">2</div>
+    </div>
+    <div class="card">
+        <div class="number">1</div>
+    </div>
+    <div class="card">
+        <div class="number">2</div>
+    </div>
+</body>
+</html>
