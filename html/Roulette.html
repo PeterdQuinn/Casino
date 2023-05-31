@@ -1,142 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Roulette - Casino App</title>
     <link rel="stylesheet" href="../css/styles.css">
-</head>
-<body>
-  <div class="game-container">
-    <button id="spin">Spin the wheel</button>
-    <div class="roulette-container">
-        <div class="roulette-wheel">
-            <div class="number number-0 section-0">0</div>
-            <div class="number number-32 section-1">32</div>
-            <div class="number number-15 section-2">15</div>
-        </div>
-    </div>
-    <div class="betting-area">
-        <div class="bet">0</div>
-        <div class="bet">32</div>
-        <div class="bet">15</div>
-        <!-- Add more bets as needed -->
-    </div>
-  </div>
+    <style>
+        
+        <style>
+    /* roulette.css */
 
-  <script src="../js/Roulette.js"></script>
-</body>
-</html>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 100vh;
+        margin: 0;
+        background-color: #fff;
+    }
 
+    .game-container {
+        width: 100%;
+        max-width: 400px;
+        padding: 20px;
+    }
 
+    .roulette-container {
+        position: relative;
+        width: 100%;
+        height: 0;
+        padding-bottom: 100%;
+    }
 
+    .roulette-wheel {
+        position: absolute;
+        border-radius: 50%;
+        width: 100%;
+        height: 100%;
+        border: 16px solid #000;
+        box-sizing: border-box;
+        background: linear-gradient(0deg, rgba(255, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 50%, rgba(255, 0, 0, 1) 100%);
+        transition: transform 3s ease-out;
+    }
 
-<style>
-/* roulette.css */
+    .number {
+        position: absolute;
+        width: 100%;
+        text-align: center;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 3em;
+        color: #000; /* Changed color to black for better visibility */
+        font-weight: bold;
+        text-shadow: 2px 2px #FFFFFF; /* Added white shadow for more contrast */
+    }
 
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    height: 100vh;
-    margin: 0;
-    background-color: #fff;
-}
+    .betting-area {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 20px;
+        background-color: #004225;
+        padding: 20px;
+        border-radius: 10px;
+    }
 
-.game-container {
-    width: 100%; /* Adjusted container width */
-    max-width: 400px; /* Added max-width to limit size on larger screens */
-    padding: 20px; /* Added padding for spacing */
-}
+    .bet {
+        width: 60px;
+        height: 60px;
+        border: 1px solid #000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #007A33;
+        color: #fff;
+        font-size: 3.5em;
+        margin: 5px;
+    }
 
-.roulette-container {
-    position: relative;
-    width: 100%;
-    height: 0;
-    padding-bottom: 100%;  /* This makes the container square */
-}
+    .slot {
+        width: 33.33%;
+        height: 33.33%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
-.roulette-wheel {
-    position: absolute;
-    border-radius: 50%;
-    width: 100%;
-    height: 100%;
-    border: 16px solid #000;
-    box-sizing: border-box;
-    background: linear-gradient(0deg, rgba(255,0,0,1) 0%, rgba(0,0,0,1) 50%, rgba(255,0,0,1) 100%);
-    transition: transform 3s ease-out;
-}
-
-.number {
+    .number {
     position: absolute;
     width: 100%;
     text-align: center;
     top: 50%;
-    transform: translateY(-50%);
-    font-size: 3em;
-    color: #fff; /* Added text color for better visibility */
-    font-weight: bold; /* Added font weight for better visibility */
-}
-
-.betting-area {
-    display: flex;
-    flex-wrap: wrap; /* Added flex-wrap to wrap bets on smaller screens */
-    justify-content: center; /* Centered bets horizontally */
-    margin-top: 20px;
-    background-color: #004225;  
-    padding: 20px;
-    border-radius: 10px;
-}
-
-.bet {
-    width: 60px;
-    height: 60px;
-    border: 1px solid #000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #007A33;  
-    color: #fff;  
-    font-size: 3.5em; 
-    margin: 5px; /* Added margin for spacing between bets */
-}
-.number {
-  position: absolute;
-  width: 100%;
-  text-align: center;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 3em;
-  color: #fff;
-  font-weight: bold;
-  animation: spin 3s linear infinite;
-}
-
-.number.number-0 {
-  animation-delay: 0s;
-}
-
-.number.number-32 {
-  animation-delay: 1s;
-}
-
-.number.number-15 {
-  animation-delay: 2s;
-}
-
-@keyframes spin {
-  0% {
-    transform: translateY(-50%) rotate(0deg);
-  }
-  100% {
-    transform: translateY(-50%) rotate(360deg);
-  }
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 5em;
+    color: #ffffff; /* color changed to white for better contrast */
+    font-weight: bold;
+    text-shadow: 2px 2px 8px #000000; /* Added black shadow for more contrast */
 }
 
 
+    .number.number-0 {
+        animation-delay: 0s;
+    }
 
+    .number.number-32 {
+        animation-delay: 1s;
+    }
+
+    .number.number-15 {
+        animation-delay: 2s;
+    }
+
+    @keyframes spin {
+        0% {
+            transform: translateY(-50%) rotate(0deg);
+        }
+
+        100% {
+            transform: translateY(-50%) rotate(360deg);
+        }
+    }
 </style>
 
+</head>
 
+<body>
+    <div class="game-container">
+        <button id="spin">Spin the wheel</button>
+        <div class="roulette-container">
+            <div class="roulette-wheel">
+                <div class="slot"><span>0</span></div>
+                <div class="slot red"><span>32</span></div>
+                <div class="slot black"><span>15</span></div>
+                <!-- Add more slots as needed -->
+            </div>
+        </div>
+        <div class="betting-area">
+            <div class="bet">0</div>
+            <div class="bet">32</div>
+            <div class="bet">15</div>
+            <!-- Add more bets as needed -->
+        </div>
+    </div>
 
+    <script src="../js/Roulette.js"></script>
+</body>
+
+</html>
