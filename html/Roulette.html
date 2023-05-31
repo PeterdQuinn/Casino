@@ -11,10 +11,9 @@
     <button id="spin">Spin the wheel</button>
     <div class="roulette-container">
         <div class="roulette-wheel">
-            <div class="number">0</div>
-            <div class="number">32</div>
-            <div class="number">15</div>
-            <!-- Add more numbers as needed -->
+            <div class="number number-0 section-0">0</div>
+            <div class="number number-32 section-1">32</div>
+            <div class="number number-15 section-2">15</div>
         </div>
     </div>
     <div class="betting-area">
@@ -23,11 +22,13 @@
         <div class="bet">15</div>
         <!-- Add more bets as needed -->
     </div>
-</div>
+  </div>
 
-    <script src="../js/Roulette.js"></script>
+  <script src="../js/Roulette.js"></script>
 </body>
 </html>
+
+
 
 
 <style>
@@ -44,7 +45,9 @@ body {
 }
 
 .game-container {
-    width: 400px;
+    width: 100%; /* Adjusted container width */
+    max-width: 400px; /* Added max-width to limit size on larger screens */
+    padding: 20px; /* Added padding for spacing */
 }
 
 .roulette-container {
@@ -66,27 +69,28 @@ body {
 }
 
 .number {
-  position: absolute;
+    position: absolute;
     width: 100%;
     text-align: center;
     top: 50%;
     transform: translateY(-50%);
     font-size: 3em;
+    color: #fff; /* Added text color for better visibility */
+    font-weight: bold; /* Added font weight for better visibility */
 }
 
 .betting-area {
-  display: flex;
-    justify-content: space-between;
+    display: flex;
+    flex-wrap: wrap; /* Added flex-wrap to wrap bets on smaller screens */
+    justify-content: center; /* Centered bets horizontally */
     margin-top: 20px;
     background-color: #004225;  
     padding: 20px;
     border-radius: 10px;
-  
-   
 }
 
 .bet {
-  width: 60px; /* Increased box size */
+    width: 60px;
     height: 60px;
     border: 1px solid #000;
     display: flex;
@@ -95,5 +99,44 @@ body {
     background-color: #007A33;  
     color: #fff;  
     font-size: 3.5em; 
+    margin: 5px; /* Added margin for spacing between bets */
 }
+.number {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 3em;
+  color: #fff;
+  font-weight: bold;
+  animation: spin 3s linear infinite;
+}
+
+.number.number-0 {
+  animation-delay: 0s;
+}
+
+.number.number-32 {
+  animation-delay: 1s;
+}
+
+.number.number-15 {
+  animation-delay: 2s;
+}
+
+@keyframes spin {
+  0% {
+    transform: translateY(-50%) rotate(0deg);
+  }
+  100% {
+    transform: translateY(-50%) rotate(360deg);
+  }
+}
+
+
+
 </style>
+
+
+
